@@ -1,0 +1,52 @@
+section.choose-fighter {
+    width: auto;
+    height: 90vh;
+    .fighter-list {
+        display: grid;
+        place-self: center;
+        place-items: center;
+        .list-item {
+            height: 40px;
+            width: 100%;
+            padding: 5px 0px;
+            .button-fighter {
+                height: 100%;
+                width: 50%;
+                text-align: left;
+                font-size: 36px;
+                &.strike {
+                    text-decoration-line: line-through;
+                    text-decoration-color: lime;
+                }
+            }
+          
+
+
+        }
+    }
+    .players {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        h1 {
+            font-size: 2em;
+            width: 100%;
+            padding: 2%;
+        }
+
+        aside.player1 {
+            grid-column: 1;
+            width: 80%;
+            place-items: baseline;
+            place-self: self-end;
+        }
+        aside.player2 {
+            width: 80%;
+            grid-column: 2;
+            place-items: baseline;
+            place-self: center;
+        }
+    }
+   
+   
+}  

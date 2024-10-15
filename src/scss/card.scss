@@ -1,0 +1,110 @@
+.card-container {
+    position: relative;
+    width: 175px;
+    height: 250px;
+    border-radius: 3%;
+    margin: 0 3px;
+    background-color: lightgrey;
+    // border: 1px solid lightgrey;
+    box-shadow: 0 0 4px 3px rgba(59, 68, 59, 0.938);
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 0.5fr 3fr;
+    grid-template-areas:
+        'top-left  top-right'
+        'middle-left  middle-right'
+        'bottom-left  bottom-right';
+    .top-left {
+        grid-area: top-left;
+        display: grid;
+        place-content: center;
+        place-self: center;
+    }
+    .top-right {
+        grid-area: top-right;
+        display: grid;
+        place-content: center;
+        padding: 3px;
+        border-radius: 0 5% 0 0;
+        background-color: lightgrey;
+        h5 {
+            text-transform: capitalize;
+        }
+    }
+    .bottom-left {
+        background-color: darkgrey;
+        grid-area: bottom-left;
+        display: flex;
+        border: 1px solid grey;
+        border-radius: 0 0 0 5%;
+        flex-flow: column;
+        justify-content: space-evenly;
+        place-items: center;
+    }
+    .middle-left {
+        grid-area: middle-left;
+        border: 1px solid black;
+        display: grid;
+        place-content: flex-start;
+        color: whitesmoke;
+        background-color: darkgrey;
+        .openingD,
+        .comboD {
+            // place-content: flex-start;
+            display: grid;
+            grid-template-areas: 'type num ex';
+            padding: 0 3px;
+            font-size: 11px;
+            white-space: nowrap;
+            place-items: baseline;
+            place-content: space-between;
+            .type {
+                grid-area: type;
+                place-self: baseline;
+                opacity: 0.84;
+            }
+            .data {
+                font-size: 18px;
+                grid-area: num;
+            }
+            .extraDamage {
+                grid-area: ex;
+                color: red;
+                font-size: 10px;
+                place-self: center;
+            }
+        }
+    }
+    .middle-right {
+        grid-area: middle-right;
+        place-content: flex-end;
+        display: flex;
+        background-color: darkgrey;
+        h4 {
+            display: none;
+            &.init {
+                display: block;
+                width: 67px;
+                margin: 0;
+                background-color: $red;
+                color: white;
+                text-align: right;
+                border-radius: 50% 0 0 50%;
+            }
+        }
+    }
+    .bottom-right {
+        grid-area: bottom-right;
+        display: grid;
+        place-content: center;
+        background-color: rgb(134, 131, 131);
+        border-radius: 0 0 5% 0;
+        .version {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            font-size: 12px;
+            place-content: flex-end;
+        }
+    }
+}
